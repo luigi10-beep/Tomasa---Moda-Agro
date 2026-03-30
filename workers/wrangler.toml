@@ -2,11 +2,11 @@ name = "tomasa-workers"
 main = "src/index.ts"
 compatibility_date = "2024-03-01"
 
-# D1 Database binding (será configurado na Task 3)
-# [[d1_databases]]
-# binding = "db_binding"
-# database_name = "tomasa-db"
-# database_id = ""
+ # D1 Database binding (será configurado na Task 3)
+ [[d1_databases]]
+ binding = "DB"
+ database_name = "tomasa-db"
+ database_id = "9900bb5c-95b0-411c-bd5a-448effca062e"
 
 # R2 Bucket binding (será configurado na Task 7)
 # [[r2_buckets]]

@@ -19,7 +19,7 @@ Configuração completa da infraestrutura Cloudflare para TOMASA, incluindo mono
   - Validar acesso via wrangler login
   - _Requirements: 2.1-2.4_
 
-- [ ] 3. D1 Database Provisioning
+- [x] 3. D1 Database Provisioning
   - Criar banco D1 nomeado tomasa-db via wrangler
   - Configurar DATABASE_URL em .env.local
   - Adicionar binding db_binding em wrangler.toml

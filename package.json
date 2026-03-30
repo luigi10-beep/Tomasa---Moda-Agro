@@ -9,7 +9,10 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "validate:cloudflare": "cd workers && pnpm wrangler whoami"
+    "validate:cloudflare": "cd workers && pnpm wrangler whoami",
+    "validate:d1": "cd workers && pnpm wrangler d1 execute tomasa-db --command \"SELECT 1 as test\"",
+    "d1:list": "cd workers && pnpm wrangler d1 list",
+    "d1:info": "cd workers && pnpm wrangler d1 info tomasa-db"
   },
   "devDependencies": {
     "turbo": "^1.13.0",
