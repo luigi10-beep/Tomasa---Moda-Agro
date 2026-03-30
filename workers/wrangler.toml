@@ -2,13 +2,18 @@ name = "tomasa-workers"
 main = "src/index.ts"
 compatibility_date = "2024-03-01"
 
- # D1 Database binding (será configurado na Task 3)
- [[d1_databases]]
- binding = "DB"
- database_name = "tomasa-db"
- database_id = "9900bb5c-95b0-411c-bd5a-448effca062e"
+# D1 Database binding
+# Binding name: db_binding (padrão do projeto conforme requirements.md)
+# Acesso no código: env.db_binding.prepare()
+[[d1_databases]]
+binding = "db_binding"
+database_name = "tomasa-db"
+database_id = "daeea588-675c-4aaa-9f7b-7b0a803c0d5e"
 
-# R2 Bucket binding (será configurado na Task 7)
-# [[r2_buckets]]
-# binding = "r2_binding"
-# bucket_name = "tomasa-media"
+# R2 Bucket binding
+# Binding name: r2_binding (padrão do projeto conforme requirements.md)
+# Acesso no código: env.r2_binding.put() / env.r2_binding.get()
+# Estrutura: products/[id]/, portfolio/[id]/
+[[r2_buckets]]
+binding = "r2_binding"
+bucket_name = "tomasa-media"
