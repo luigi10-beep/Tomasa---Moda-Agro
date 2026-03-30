@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sage-light: #E8F0DC;
+  --moss-dark: #4A6741;
+  --almost-black: #2C2C2C;
+  --white: #FFFFFF;
+  --sage-ultra-light: #F7F9F3;
+  --moss-medium: #5C7A52;
+}
+
+body {
+  color: var(--almost-black);
+  background: var(--white);
+}

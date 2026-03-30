@@ -2445,3 +2445,70 @@ Key architectural decisions:
 - Clean, brand-aligned visual design with focus on photography and simplicity
 
 The implementation follows a phased approach over 9 weeks, starting with infrastructure setup and progressing through backend API, frontend development, admin panel, and finally payment integration and launch preparation.
+
+
+---
+
+## Correctness Properties — FASE 1: Infraestrutura
+
+*Propriedades de correção para a FASE 1 focam na validação da estrutura do monorepo, configuração de variáveis de ambiente, esquema de banco de dados e convenções de armazenamento.*
+
+### Property 1: Monorepo Directory Structure
+
+For any monorepo initialization, the three required directories (apps/web, apps/admin, workers) must exist and contain their respective configuration files.
+
+**Validates: Requirements 1.1, 1.3, 1.4, 1.5**
+
+### Property 2: Turborepo Configuration Validity
+
+For any turbo.json file, it must contain valid JSON with pipeline and task definitions that reference all workspace packages.
+
+**Validates: Requirements 1.2, 1.5**
+
+### Property 3: Environment Variables Presence
+
+For any development environment, all required environment variables (REGION, CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN, R2_BUCKET_NAME, R2_PUBLIC_URL, DATABASE_URL) must be set and accessible to the application.
+
+**Validates: Requirements 2.3, 2.4, 3.3, 7.3, 7.4, 16.1, 16.2, 16.3, 16.5**
+
+### Property 4: Products Table Schema Completeness
+
+For any products table in D1, all required columns (id, name, slug, description, price_brl, price_uyu, category, sizes, images, featured, active, created_at) must exist with correct types and constraints.
+
+**Validates: Requirements 4.1, 4.2, 4.3, 4.6, 4.7**
+
+### Property 5: JSON Array Storage and Retrieval
+
+For any JSON array stored in the sizes or images columns, parsing and deserializing the stored JSON must produce an equivalent array to the original.
+
+**Validates: Requirements 4.4, 4.5**
+
+### Property 6: Portfolio Table Schema Completeness
+
+For any portfolio table in D1, all required columns (id, title, category, image_url, delivered_at, created_at) must exist with correct types.
+
+**Validates: Requirements 5.1, 5.2, 5.3, 5.4**
+
+### Property 7: Videos Table Schema Completeness
+
+For any videos table in D1, all required columns (id, title, youtube_url, display_order) must exist with correct types and constraints.
+
+**Validates: Requirements 6.1, 6.2, 6.3, 6.4**
+
+### Property 8: R2 Storage Path Convention
+
+For any image uploaded to R2, the resulting path must follow the convention products/{product-id}/foto-{index}.webp for products or portfolio/{portfolio-id}/foto.webp for portfolio items.
+
+**Validates: Requirements 8.1, 8.2, 8.3, 8.4**
+
+### Property 9: Workers Configuration Bindings
+
+For any wrangler.toml file, it must contain valid bindings for both D1 database and R2 bucket resources.
+
+**Validates: Requirements 9.1, 9.2, 9.3, 9.4**
+
+### Property 10: Monorepo Build Success
+
+For any monorepo build execution, the build process must complete without errors and produce output artifacts for all packages.
+
+**Validates: Requirements 18.1**
