@@ -13,7 +13,7 @@ Configuração completa da infraestrutura Cloudflare para TOMASA, incluindo mono
   - Instalar dependências base (Next.js 14, Wrangler)
   - _Requirements: 1.1-1.10_
 
-- [ ] 2. Cloudflare Account Configuration
+- [x] 2. Cloudflare Account Configuration
   - Criar API token com permissões D1, R2, Workers, Pages
   - Configurar CLOUDFLARE_ACCOUNT_ID e CLOUDFLARE_API_TOKEN em .env.local
   - Validar acesso via wrangler login

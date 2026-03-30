@@ -24,19 +24,27 @@ Multi-regional e-commerce platform for agricultural fashion, operating in Brazil
 
 - Node.js >= 18.0.0
 - pnpm >= 8.0.0
+- Cloudflare Account (free tier works)
 
 ### Installation
 
 ```bash
 # Install dependencies
 pnpm install
-
-# Run development servers
-pnpm dev
-
-# Build all packages
-pnpm build
 ```
+
+### Cloudflare Configuration
+
+1. Follow the detailed guide: [docs/CLOUDFLARE_SETUP.md](docs/CLOUDFLARE_SETUP.md)
+2. Copy `.env.example` to `.env.local` and fill in your credentials
+3. Validate configuration:
+
+```bash
+# Validate Cloudflare credentials
+pnpm validate:cloudflare
+```
+
+See [docs/QUICK_START.md](docs/QUICK_START.md) for complete setup instructions.
 
 ### Development
 
